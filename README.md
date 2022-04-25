@@ -22,13 +22,12 @@ where market_code='Mark006';`
 ###### Checking transactions where currency is US dollars
 `SELECT * from sales.transactions where currency="USD";`
 
---------------------------------------------------------
 ###### Transactions for the year 2020 joined by date table
 `SELECT sales.transactions.*, sales.date.*
 FROM sales.transactions INNER JOIN sales.date
 ON sales.transactions.order_date = sales.date.date
 WHERE year = '2020';`
----------------------------------------------------------
+
 ###### Total Revenue for the year 2020
 `SELECT SUM(sales.transactions.sales_amount)
 FROM sales.transactions 
